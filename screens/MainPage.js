@@ -3,7 +3,6 @@ import {
 	View,
 	Dimensions,
 	SafeAreaView,
-	ImageBackground,
 	Image,
 	TouchableOpacity,
 	Text,
@@ -16,7 +15,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MainCard from '../components/MainCard';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 const Screen = (props) => (
 	<TouchableOpacity style={{ width: '100%', height: 153, alignItems: 'center' }} onPress={props.onPress}>
 		<Image source={require('../assets/icons/slide.png')} style={{ width: '100%', height: '120%' }} />
@@ -32,16 +31,10 @@ export default class MainPage extends React.Component {
 	toggleModal = () => {
 		this.setState({ isModalVisible: !this.state.isModalVisible });
 	};
-	toggleModal1 = () => {
-		this.setState({ isModalVisible: false, isModalVisible1: !this.state.isModalVisible1 });
-	};
-	toggleModal2 = () => {
-		this.setState({ isModalVisible2: !this.state.isModalVisible2 });
-	};
 	SCREENS = [
-		<Screen text="first screen" onPress={() => this.props.navigation.navigate('Catalog')} />,
-		<Screen text="second screen" />,
-		<Screen text="third screen" />,
+		<Screen onPress={() => this.props.navigation.navigate('Catalog')} />,
+		<Screen onPress={() => this.props.navigation.navigate('Catalog')}/>,
+		<Screen onPress={() => this.props.navigation.navigate('Catalog')}/>,
 	];
 
 	constructor(props) {

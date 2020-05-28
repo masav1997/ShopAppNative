@@ -1,22 +1,39 @@
 import React from 'react';
-import {
-	View,
-	Dimensions,
-	SafeAreaView,
-	ImageBackground,
-	Image,
-	TouchableOpacity,
-	Text,
-	ScrollView,
-} from 'react-native';
+import { View, Dimensions, SafeAreaView, Image, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import MainCard from '../components/MainCard';
 import CatalogCard from '../components/CatalogCard';
 
 const { width } = Dimensions.get('window');
+
+const viewStyle = {
+	backgroundColor: '#E5E5E5',
+	height: '100%',
+	width: width,
+	alignItems: 'center',
+};
+
+const titleTextStyle = {
+	fontSize: 20,
+	color: '#1E264E',
+	fontWeight: '600',
+	alignSelf: 'flex-start',
+	marginLeft: 12,
+	marginTop: 24,
+};
+
+const viewStyle1 = { flexDirection: 'row', justifyContent: 'center', paddingHorizontal: 12 };
+
+const textStyle = {
+	fontSize: 11,
+	color: '#1E264E',
+	fontWeight: '500',
+	marginBottom: 20,
+};
+
+const imgStyle = { width: 20, height: 20, justifyContent: 'flex-start', marginRight: 12 };
 
 export default class Catalog extends React.Component {
 	render() {
@@ -34,56 +51,32 @@ export default class Catalog extends React.Component {
 		return (
 			<SafeAreaView>
 				<ScrollView>
-					<View
-						style={{
-							backgroundColor: '#E5E5E5',
-							height: '100%',
-							width: width,
-							alignItems: 'center',
-						}}
-					>
-						<Header phone="8 800 112 02 99"
+					<View style={viewStyle}>
+						<Header
+							phone="8 800 112 02 99"
 							up="11:00"
 							to="20:00"
 							onPress1={() => this.props.navigation.navigate('Catalog')}
 							onPress2={() => this.props.navigation.navigate('Basket')}
 							onPress2={() => this.props.navigation.navigate('Basket')}
 							onPress3={() => this.props.navigation.navigate('SignIn')}
-							onCall={() => this.props.navigation.navigate('CallMe')} />
-						<Text
-							style={{
-								fontSize: 20,
-								color: '#1E264E',
-								fontWeight: '600',
-								alignSelf: 'flex-start',
-								marginLeft: 12,
-								marginTop: 24,
-							}}
-						>
-							Вина
-						</Text>
-						<View style={{ flexDirection: 'row', justifyContent: 'center', paddingHorizontal: 12 }}>
+							onCall={() => this.props.navigation.navigate('CallMe')}
+						/>
+						<Text style={titleTextStyle}>Вина</Text>
+						<View style={viewStyle1}>
 							<View style={{ flex: 3 }}>
-								<Text
-									style={{
-										fontSize: 11,
-										color: '#1E264E',
-										fontWeight: '500',
-										marginBottom: 20,
-									}}
-								>
-									Сортировка:
-								</Text>
-								<Dropdown data={data} containerStyle={{ marginTop: -50, width: 200 }} rippleOpacity={0}/>
+								<Text style={textStyle}>Сортировка:</Text>
+								<Dropdown
+									data={data}
+									containerStyle={{ marginTop: -50, width: 200 }}
+									rippleOpacity={0}
+								/>
 							</View>
 							<TouchableOpacity
 								style={{ flex: 1, alignItems: 'flex-end' }}
 								onPress={() => this.props.navigation.navigate('Filters')}
 							>
-								<Image
-									source={require('../assets/icons/filter.png')}
-									style={{ width: 20, height: 20, justifyContent: 'flex-start', marginRight: 12 }}
-								/>
+								<Image source={require('../assets/icons/filter.png')} style={imgStyle} />
 								<Text
 									style={{
 										fontSize: 11,

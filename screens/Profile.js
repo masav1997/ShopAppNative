@@ -1,13 +1,9 @@
 import React from 'react';
-import { View, Dimensions, SafeAreaView, TextInput, Image, TouchableOpacity, Text, ScrollView } from 'react-native';
+import { View, Dimensions, SafeAreaView, Image, TouchableOpacity, Text, ScrollView } from 'react-native';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import MainCard from '../components/MainCard';
-import CatalogCard from '../components/CatalogCard';
-import AboutCard from '../components/AboutCard';
-import { ceil } from 'react-native-reanimated';
-import BasketCard from '../components/BasketCard';
+import InputForm from '../components/InputForm';
 
 const { width } = Dimensions.get('window');
 
@@ -24,14 +20,16 @@ export default class Profile extends React.Component {
 							alignItems: 'center',
 						}}
 					>
-						<Header phone="8 800 112 02 99"
+						<Header
+							phone="8 800 112 02 99"
 							up="11:00"
 							to="20:00"
 							onPress1={() => this.props.navigation.navigate('Catalog')}
 							onPress2={() => this.props.navigation.navigate('Basket')}
 							onPress2={() => this.props.navigation.navigate('Basket')}
 							onPress3={() => this.props.navigation.navigate('SignIn')}
-							onCall={() => this.props.navigation.navigate('CallMe')} />
+							onCall={() => this.props.navigation.navigate('CallMe')}
+						/>
 						<Text
 							style={{
 								fontSize: 20,
@@ -90,121 +88,11 @@ export default class Profile extends React.Component {
 									</TouchableOpacity>
 								</View>
 							</View>
-							<Text
-								style={{
-									fontSize: 13,
-									color: '#7285A4',
-									fontWeight: '500',
-
-									marginTop: 12,
-								}}
-							>
-								ФИО
-							</Text>
-							<TextInput
-								style={{
-									height: 32,
-									borderWidth: 0,
-									width: '100%',
-									backgroundColor: '#F3F6F7',
-									fontSize: 13,
-									borderRadius: 8,
-									marginRight: 3,
-									marginTop: 4,
-								}}
-							/>
-							<Text
-								style={{
-									fontSize: 13,
-									color: '#7285A4',
-									fontWeight: '500',
-
-									marginTop: 12,
-								}}
-							>
-								Почта
-							</Text>
-							<TextInput
-								style={{
-									height: 32,
-									borderWidth: 0,
-									width: '100%',
-									backgroundColor: '#F3F6F7',
-									fontSize: 13,
-									borderRadius: 8,
-									marginRight: 3,
-									marginTop: 4,
-								}}
-							/>
-							<Text
-								style={{
-									fontSize: 13,
-									color: '#7285A4',
-									fontWeight: '500',
-
-									marginTop: 12,
-								}}
-							>
-								Адрес доставки (город, улица, дом)
-							</Text>
-							<TextInput
-								style={{
-									height: 32,
-									borderWidth: 0,
-									width: '100%',
-									backgroundColor: '#F3F6F7',
-									fontSize: 13,
-									borderRadius: 8,
-									marginRight: 3,
-									marginTop: 4,
-								}}
-							/>
-							<Text
-								style={{
-									fontSize: 13,
-									color: '#7285A4',
-									fontWeight: '500',
-
-									marginTop: 12,
-								}}
-							>
-								Адрес 2
-							</Text>
-							<TextInput
-								style={{
-									height: 32,
-									borderWidth: 0,
-									width: '100%',
-									backgroundColor: '#F3F6F7',
-									fontSize: 13,
-									borderRadius: 8,
-									marginRight: 3,
-									marginTop: 4,
-								}}
-							/>
-							<Text
-								style={{
-									fontSize: 13,
-									color: '#7285A4',
-									fontWeight: '500',
-
-									marginTop: 12,
-								}}
-							>
-								Адрес 3
-							</Text>
-							<TextInput
-								style={{
-									height: 32,
-									borderWidth: 0,
-									width: '100%',
-									backgroundColor: '#F3F6F7',
-									fontSize: 13,
-									borderRadius: 8,
-									marginRight: 3,
-									marginTop: 4,
-								}}
-							/>
+							<InputForm title="ФИО" />
+							<InputForm title="Почта" />
+							<InputForm title="Адрес доставки (город, улица, дом)" />
+							<InputForm title="Адрес 2" />
+							<InputForm title="Адрес 3" />
 							<TouchableOpacity onPress={() => this.props.navigation.navigate('Friendship')}>
 								<Image
 									source={require('../assets/icons/save_button.png')}

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "HelloWorld",
+    "name": "ShopApp",
     "slug": "ShopApp",
     "platforms": [
       "ios",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#E5E5E5"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

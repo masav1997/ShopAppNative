@@ -1,23 +1,13 @@
 import React from 'react';
 import {
 	View,
-	Dimensions,
-	SafeAreaView,
-	ImageBackground,
 	Image,
 	TouchableOpacity,
 	Text,
-	TextInput,
 } from 'react-native';
-import Modal from 'react-native-modal';
+import InputForm from '../components/InputForm';
 
 export default class SignIn extends React.Component {
-	state = {
-		isModalVisible1: true,
-	};
-	toggleModal = () => {
-		this.setState({ isModalVisible1: false });
-	};
 	render() {
 		return (
 			<View style={{ backgroundColor: 'rgba(30, 38, 78, 0.7)', height: '100%', padding: 12 }}>
@@ -37,50 +27,10 @@ export default class SignIn extends React.Component {
 					<Text style={{ fontSize: 13, textAlign: 'center', color: '#7285A4' }}>
 						Введите ваш номер телефона чтобы войти
 					</Text>
-					<Text
-						style={{
-							fontSize: 13,
-							color: '#7285A4',
-							marginTop: 24,
-						}}
-					>
-						Ваш номер телефона
-					</Text>
-					<TextInput
-						style={{
-							height: 32,
-							borderWidth: 0,
-							width: '100%',
-							backgroundColor: '#F3F6F7',
-							fontSize: 13,
-							borderRadius: 8,
-							marginRight: 3,
-							marginTop: 4,
-						}}
-					/>
+					<InputForm title="Ваш номер телефона" />
 					<View style={{ flexDirection: 'row' }}>
 						<View style={{ flex: 1 }}>
-							<Text
-								style={{
-									fontSize: 13,
-									color: '#7285A4',
-									marginTop: 16,
-								}}
-							>
-								Код из смс
-							</Text>
-							<TextInput
-								style={{
-									height: 32,
-									borderWidth: 0,
-									width: '100%',
-									backgroundColor: '#F3F6F7',
-									fontSize: 13,
-									borderRadius: 8,
-									marginRight: 3,
-									marginTop: 4,
-								}}
-							/>
+							<InputForm title="Код из смс" />
 						</View>
 						<TouchableOpacity style={{ flex: 1, alignSelf: 'center', alignItems: 'flex-start' }}>
 							<Text

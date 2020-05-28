@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, ScrollView } from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AppLoading } from 'expo';
@@ -12,7 +12,6 @@ import Basket from './screens/Basket';
 import Profile from './screens/Profile';
 import Friendship from './screens/Friendship';
 import Filters from './screens/Filters';
-import Header from './components/Header';
 import SignIn from './screens/SignIn';
 import SignUp from './screens/SignUp';
 import CallMe from './screens/CallMe';
@@ -26,7 +25,6 @@ const images = [
 	require('./assets/icons/copy_button.png'),
 	require('./assets/icons/pay_button.png'),
 	require('./assets/icons/exit_button.png'),
-	require('./assets/icons/copy_button.png'),
 	require('./assets/icons/basket_button1.png'),
 	require('./assets/icons/basket_button.png'),
 	require('./assets/icons/basket.png'),
@@ -41,6 +39,31 @@ const images = [
 	require('./assets/icons/plus.png'),
 	require('./assets/icons/profile.png'),
 	require('./assets/icons/catalog.png'),
+	require('./assets/icons/beer.png'),
+	require('./assets/icons/burger.png'),
+	require('./assets/icons/champagne.png'),
+	require('./assets/icons/close.png'),
+	require('./assets/icons/cognac.png'),
+	require('./assets/icons/del.png'),
+	require('./assets/icons/done.png'),
+	require('./assets/icons/down.png'),
+	require('./assets/icons/facebook.png'),
+	require('./assets/icons/filter.png'),
+	require('./assets/icons/instagram.png'),
+	require('./assets/icons/liquor.png'),
+	require('./assets/icons/logo.png'),
+	require('./assets/icons/min.png'),
+	require('./assets/icons/phone.png'),
+	require('./assets/icons/rum.png'),
+	require('./assets/icons/sale.png'),
+	require('./assets/icons/slide.png'),
+	require('./assets/icons/snack.png'),
+	require('./assets/icons/telegram.png'),
+	require('./assets/icons/twitter.png'),
+	require('./assets/icons/up.png'),
+	require('./assets/icons/vodka.png'),
+	require('./assets/icons/whiskey.png'),
+	require('./assets/icons/wine.png'),
 ];
 
 export default class App extends React.Component {
