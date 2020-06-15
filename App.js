@@ -17,6 +17,7 @@ import SignUp from './screens/SignUp';
 import CallMe from './screens/CallMe';
 import Age from './screens/Age';
 import ChangePhone from './screens/ChangePhone';
+import FinishPage from './screens/FinishPage';
 
 const Stack = createStackNavigator();
 
@@ -109,6 +110,7 @@ export default class App extends React.Component {
 					<Stack.Screen name="CallMe" component={CallMe} />
 					<Stack.Screen name="Age" component={Age} />
 					<Stack.Screen name="ChangePhone" component={ChangePhone} />
+					<Stack.Screen name="FinishPage" component={FinishPage} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		);

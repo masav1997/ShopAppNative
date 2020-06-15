@@ -94,7 +94,7 @@ export default class Basket extends React.Component {
 						<BasketRegistration
 							title="Оформление"
 							label="Адрес доставки (город, улица, дом)"
-							onPress={() => this.props.navigation.navigate('Profile')}
+							onPress={() => this.props.navigation.navigate('FinishPage')}
 						/>
 						<Footer phone="8 800 112 02 99" up="11:00" to="20:00" />
 					</View>

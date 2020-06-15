@@ -3,6 +3,7 @@ import { View, Image, TouchableOpacity, Text, Dimensions } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 import AboutRow from '../components/AboutRow';
 import InputForm from './InputForm';
+import CheckBox from '@react-native-community/checkbox';
 
 const { width } = Dimensions.get('window');
 
@@ -90,6 +91,22 @@ export default class BasketRegistration extends React.Component {
 				},
 			],
 			value: '',
+			pickup: false,
+			data1: [
+				{
+					value: 'Онлайн картой',
+					label: 'Онлайн картой',
+				},
+				{
+					value: 'Наличными курьеру',
+					label: 'Наличными курьеру',
+				},
+				{
+					value: 'Наличными',
+					label: 'Наличными',
+				},
+			],
+			value1: '',
 		};
 	}
 
@@ -113,7 +130,16 @@ export default class BasketRegistration extends React.Component {
 					<InputForm title="ФИО" />
 					<InputForm title="Почта" />
 					<InputForm title="Номер телефона" />
-					<Text style={labelTextStyle}>{label}</Text>
+					<View style={{ flexDirection: 'row' }}>
+						<CheckBox
+							disabled={this.state.pickup ? true : false}
+							value={this.state.pickup ? true : false}
+							style={{ marginTop: 6 }}
+							onValueChange={() => this.setState({ pickup: !this.state.pickup })}
+						/>
+						<Text style={labelTextStyle}>Самовывоз</Text>
+					</View>
+					<Text style={labelTextStyle}>{this.state.pickup ? 'Пункт самовывоза' : 'Адрес доставки'}</Text>
 					<View style={viewStyle2}>
 						<Dropdown
 							value={this.state.label}
@@ -124,6 +150,22 @@ export default class BasketRegistration extends React.Component {
 							onChangeText={(value) => {
 								this.setState({
 									value,
+								});
+							}}
+							rippleOpacity={0}
+						/>
+					</View>
+					<Text style={labelTextStyle}>Выберите способ оплаты</Text>
+					<View style={viewStyle2}>
+						<Dropdown
+							value={this.state.label}
+							data={this.state.data1}
+							overlayStyle={{ borderColor: 'white', borderWidth: 0 }}
+							dropdownOffset={{ top: 0 }}
+							containerStyle={{ width: '95%', height: 32 }}
+							onChangeText={(value1) => {
+								this.setState({
+									value1,
 								});
 							}}
 							rippleOpacity={0}
